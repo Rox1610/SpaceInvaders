@@ -14,11 +14,11 @@ class Bullet(Sprite):
             self.settings.bullet_height)
         self.rect.midtop = ai_game.ship.rect.midtop
 
-        # Store the bullet's position as a decimal value
+        # Store bullet position as decimal value
         self.y = float(self.rect.y)
 
     def update(self):
-        # Update the decimal position of the bullet
+        # Update decimal position of the bullet
         self.y -= self.settings.bullet_speed
         # Update the rect position
         self.rect.y = self.y
