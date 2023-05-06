@@ -8,8 +8,8 @@ class Alien(Sprite):
         self.screen = ai_game.screen
 
         # Load the alien spaceship image and get its rect
-        self.image = pygame.image.load('images/alien.bmp')
-        self.image = pygame.transform.scale(self.image, (164.8, 92.7))
+        self.image = pygame.image.load('images/ufo.bmp')
+        self.image = pygame.transform.scale(self.image, (50, 50))
         self.rect = self.image.get_rect()
 
         self.rect.x = self.rect.width
