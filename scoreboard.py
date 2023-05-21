@@ -1,8 +1,16 @@
 import pygame.font
 
+# to create ships' group
+from pygame.sprite import Group
+
+from ship import Ship
+
 class Scoreboard:
 
     def __init__(self, ai_game):
+        # added to allow the creation of ships
+        self.ai_game = ai_game
+
         self.screen = ai_game.screen
         self.screen_rect = self.screen.get_rect()
         self.settings = ai_game.settings
@@ -16,6 +24,7 @@ class Scoreboard:
 
         self.prep_high_score()
         self.prep_level()
+        self.prep_ships()
 
     # transform the text to an image
     def prep_score(self):
@@ -28,11 +37,12 @@ class Scoreboard:
         self.score_rect.right = self.screen_rect.right - 20
         self.score_rect.top = 20
 
-    # draw the score and the level on the screen
+    # draw the score, the level and ship left on the screen
     def show_score(self):
         self.screen.blit(self.score_image, self.score_rect)
         self.screen.blit(self.high_score_image, self.high_score_rect)
         self.screen.blit(self.level_image, self.level_rect)
+        self.ships.draw(self.screen)
 
     # turn the high score into an image
     def prep_high_score(self):
@@ -52,11 +62,18 @@ class Scoreboard:
 
         # Position the level
         self.level_rect = self.level_image.get_rect()
-        self.level_rect.left = self.level_rect.left + 20
-        self.level_rect.top = 20
         # to display level below score:
-        # self.level_rect.right = self.score_rect.right
-        # self.level_rect.top = self.score_rect.bottom + 10
+        self.level_rect.right = self.score_rect.right
+        self.level_rect.top = self.score_rect.bottom + 10
+
+    # display the ship number left
+    def prep_ships(self):
+        self.ships = Group()
+        for ship_number in range(self.stats.ships_left):
+            ship = Ship(self.ai_game)
+            ship.rect.x = 10 + ship_number * ship.rect.width
+            ship.rect.y = 10
+            self.ships.add(ship)
 
     # check to see if there's a new high score
     def check_high_score(self):
