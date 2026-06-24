@@ -28,5 +28,3 @@ Install pygame:
 pip install pygame
 
 python alien_invasion.py
-
-<img width="1082" height="706" alt="Screenshot 2026-06-24 at 6 31 59 PM" src="https://github.com/user-attachments/assets/31e23e7e-ad42-45aa-a608-83430cedd5b2" />
