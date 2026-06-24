@@ -137,7 +137,7 @@ class AlienInvasion:
             self.settings.increase_speed()
 
             # increase level
-            self.stat.level += 1
+            self.stats.level += 1
             self.sb.prep_level()
 
     def _check_alien_ship_collisions(self):
