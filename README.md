@@ -26,6 +26,10 @@ Make sure you have Python 3.6+ installed.
 Install pygame:
 ```bash
 pip install pygame
+```
+
+Run the game:
+```bash
 python alien_invasion.py
 ```
 
