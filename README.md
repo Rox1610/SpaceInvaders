@@ -17,20 +17,6 @@ Control a spaceship, shoot down alien fleets, and survive as long as possible wh
 
 ---
 
-## 🧱 Project Structure
-
-├── alien_invasion.py # Main game loop (entry point)
-├── settings.py # Game configuration (speed, colors, etc.)
-├── game_stats.py # Tracks score, level, ships left
-├── scoreboard.py # Displays score, level, high score
-├── ship.py # Player ship logic
-├── alien.py # Alien behavior
-├── bullet.py # Bullet mechanics
-├── button.py # Start button UI
-└── README.md
-
----
-
 ## 🚀 How to Run
 
 ### 1. Install dependencies
